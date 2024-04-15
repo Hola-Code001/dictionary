@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionary app</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="images/book.svg" alt="book icon" width="44" height="44" />
+        </div>
+
+        <div class="font-and-theme">
+          <div class="dropdown">
+            <div class="selected">
+              <p class="selected-font">Outfit</p>
+              <span class="caret"></span>
+            </div>
+            <ul class="select hide">
+              <li class="select-item selected-active">Outfit</li>
+              <li class="select-item">Inter</li>
+              <li class="select-item">Montserrat</li>
+            </ul>
+          </div>
+          <div class="theme">
+            <button class="toggle-btn">
+              <span></span>
+            </button>
+            <img
+              src="images/sun.svg"
+              alt="moon icon"
+              height="32"
+              width="32"
+              class="theme-icon"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <div class="search">
+        <form action="" id="search">
+          <input
+            type="text"
+            class="input"
+            id="input"
+            placeholder="Enter the word to search for"
+          />
+          <button type="submit">
+            <img
+              src="images/search.svg"
+              alt="searchIcon"
+              width="28"
+              height="28"
+            />
+          </button>
+        </form>
+      </div>
+
+      <p class="warning hide"></p>
+
+      <div class="result hide">
+        <div class="word-and-play-btn">
+          <div>
+            <h1 class="word-search"></h1>
+            <p class="phonetic-search"></p>
+          </div>
+          <button class="play-btn hide">
+            <img src="images/play.svg" alt="play icon" />
+          </button>
+        </div>
+
+        <div class="part-of-speech">
+          <div class="heading part-of-speech-container">
+            <h2 class="first-part"></h2>
+            <span class="line"></span>
+          </div>
+          <h3>Meaning</h3>
+          <ul class="list-container" id="first-meaning"></ul>
+          <div class="synonyms-container">
+            <h3>Synonyms</h3>
+            <ul class="synonyms-one synonyms"></ul>
+          </div>
+        </div>
+        <div class="part-of-speech">
+          <div class="heading part-of-speech-container">
+            <h2 class="second-part"></h2>
+            <span class="line"></span>
+          </div>
+          <h3>Meaning</h3>
+          <ul class="list-container" id="second-meaning"></ul>
+          <div class="synonyms-container">
+            <h3>Synonyms</h3>
+            <ul class="synonyms-two synonyms"></ul>
+          </div>
+        </div>
+        <div class="bottom-line"></div>
+        <div class="source">
+          <span>Source:</span>
+          <a href="" class="source-link"></a>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

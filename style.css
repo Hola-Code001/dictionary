@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --Purple: #9f41ea;
+  --Light-purple: #eacffc;
+  --Light-grey: #c0c0c0;
+  --Dark-grey: #373737;
+  --White: #fff;
+
+  --Primary-color: #ffffff;
+  --Secondary-color: #050505;
+  --Accent-color: #d3d3d3;
+
+  --ff: "Outfit", sans-serif;
+}
+
+.dark-theme {
+  --Primary-color: #050505;
+  --Secondary-color: #ffffff;
+  --Accent-color: #48484885;
+}
+
+/* style reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* genaral styling */
+/* 
+#book {
+  width: 200px;
+  height: 200px;
+} */
+
+body {
+  /* font-family: var(--ff); */
+  font-family: "Outfit", sans-serif;
+  background-color: var(--Primary-color);
+}
+
+.container {
+  max-width: 987px;
+  margin-inline: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0.5rem;
+}
+
+.font-and-theme,
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.font-and-theme p {
+  color: var(--Secondary-color);
+}
+
+.navbar .theme {
+  gap: 1rem;
+}
+
+.toggle-btn {
+  border: none;
+  width: 64px;
+  height: 34px;
+  /* padding: 5px; */
+  background-color: var(--Dark-grey);
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: all 400ms;
+}
+
+.toggle-btn span {
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-color: var(--White);
+  border-radius: 50%;
+  position: absolute;
+  top: 2.7px;
+  left: 2px;
+  transition: all 300ms;
+  /* translate: -50% -50%; */
+}
+
+.toggle-btn.active {
+  background-color: var(--Purple);
+}
+
+.toggle-btn.active span {
+  position: absolute;
+  top: 2.7px;
+  left: 34px;
+}
+
+.dropdown {
+  width: 140px;
+  color: var(--Secondary-color);
+  position: relative;
+  font-weight: 600;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 1rem; */
+  background-color: var(--Accent-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.caret {
+  border-right: solid 7px transparent;
+  border-left: solid 7px transparent;
+  border-top: solid 9px var(--Purple);
+  transition: 400ms;
+}
+.rotate {
+  rotate: 180deg;
+}
+
+.select {
+  list-style: none;
+  padding: 0;
+  background-color: var(--Secondary-color);
+  color: var(--Primary-color);
+  padding: 0 0.2rem 0.2rem;
+  border-radius: 6px;
+  width: 100%;
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  z-index: 1;
+  /* box-shadow: 5px 5px 15px rgba(117, 117, 117, 0.21); */
+  overflow: hidden;
+}
+
+.select li {
+  text-align: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 0.3rem;
+}
+
+.select li:hover {
+  background-color: var(--Primary-color);
+  color: var(--Secondary-color);
+}
+
+.selected-active {
+  background-color: var(--Primary-color);
+  color: var(--Secondary-color);
+}
+
+main {
+  padding: 0 0.5rem;
+  color: var(--Secondary-color);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  gap: 1rem;
+}
+
+form input {
+  background-color: var(--Accent-color);
+  border: none;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--Secondary-color);
+  border-radius: 4px;
+  /* width: 80%; */
+  width: 100%;
+}
+
+form button {
+  background-color: var(--Accent-color);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 52px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.word-and-play-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.word-and-play-btn div p {
+  color: var(--Purple);
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 0.5rem;
+}
+
+.word-and-play-btn h1 {
+  font-size: 42px;
+}
+
+.play-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Light-purple);
+  cursor: pointer;
+}
+
+.result {
+  margin: 0 auto 3rem;
+}
+
+.result h3 {
+  color: var(--Light-grey);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.line {
+  display: inline-block;
+  flex-grow: 1;
+  border-top: solid 1px var(--Accent-color);
+}
+
+.meaning-text {
+  font-weight: 500;
+  color: var(--Light-grey);
+}
+
+.list-container {
+  margin: 1rem 0 1rem 3rem;
+  /* list-style: none; */
+  padding: 0;
+}
+
+.list-item {
+  margin-bottom: 0.8rem;
+}
+
+.part-of-speech-container {
+  margin-bottom: 3rem;
+}
+
+.list-item::marker {
+  color: var(--Purple);
+}
+
+.hide {
+  display: none;
+}
+
+.synonyms-container {
+  display: flex;
+  align-items: top;
+  gap: 0.5rem;
+  margin: 3rem 0 1rem;
+}
+
+.synonyms li {
+  list-style: none;
+  display: inline-block;
+  font-weight: 600;
+  color: var(--Purple);
+  margin: 0 0.8rem 1rem;
+}
+
+.bottom-line {
+  border-top: solid 1px var(--Accent-color);
+  margin: 3rem 0 1rem;
+}
+
+li span {
+  display: block;
+  color: var(--Light-grey);
+  margin: 1rem 0;
+}
+
+.source span {
+  color: var(--Light-grey);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.source a {
+  color: var(--Secondary-color);
+  margin-left: 0.5em;
+}
+
+.warning {
+  text-align: center;
+  margin-top: 5rem;
+  font-weight: 700;
+  font-size: 24px;
+}
