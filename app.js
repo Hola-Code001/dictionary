@@ -104,7 +104,6 @@ async function fetchMeaning() {
       secondMeaningContainer.appendChild(listItem);
 
       if (item.example) {
-        console.log(item.example);
         let exampleElement = document.createElement("span");
         listItem.appendChild(exampleElement);
         exampleElement.textContent = `"${item.example}"`;
@@ -127,6 +126,7 @@ async function fetchMeaning() {
     resultContainer.classList.remove("hide");
     playButton.classList.remove("hide");
     warningText.classList.add("hide");
+    console.log(data[0]);
   } catch {
     (error) => {
       console.log(error);
